@@ -1,6 +1,6 @@
 # Velvety Website
 
-Production single-page website for Velvety Brand Studio.
+Production-ready single-page website for Velvety Brand Studio.
 
 ## Tech Stack
 - HTML
