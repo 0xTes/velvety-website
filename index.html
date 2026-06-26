@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,14 +8,17 @@
   <meta name="description" content="Velvety Brand Studio helps independent adult content creators grow their audience, own their email list, and build a lasting personal brand — legally and discreetly." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" /> 
-
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
 </head>
 <body>
+
 <!-- ═══ NAV ═══ -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#" class="nav-logo">Velvety<span>.</span></a>
+    <div class="nav-brand">
+      <a href="#" class="nav-logo">Velvety<span>.</span></a>
+      <div class="nav-tagline">Digital Marketing &amp; Brand Studio</div>
+    </div>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#services">Services</a></li>
@@ -23,7 +26,13 @@
       <li><a href="#how">How It Works</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
-    <a href="#newsletter" class="btn btn-gold nav-cta">Get Started</a>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <span class="theme-icon theme-icon-dark">🌙</span>
+        <span class="theme-icon theme-icon-light">☀️</span>
+      </button>
+      <a href="#newsletter" class="btn btn-gold nav-cta">Get Started</a>
+    </div>
     <button class="hamburger" id="hamburger" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -47,31 +56,79 @@
   <div class="hero-grain"></div>
   <div class="hero-ribbon"></div>
   <div class="container">
-    <div class="hero-content">
-      <div class="hero-eyebrow">
-        <div class="hero-eyebrow-line"></div>
-        <span>Digital Marketing &amp; Brand Studio</span>
-      </div>
-      <h1 class="serif">Your brand.<br/>Your audience.<br/><em>Your income.</em></h1>
-      <p class="hero-sub">
-        Velvety Brand Studio helps independent creators build a professional online presence, grow an owned email audience, and convert subscribers into loyal paying fans — all on your terms.
-      </p>
-      <div class="hero-actions">
-        <a href="#newsletter" class="btn btn-gold">
-          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          Claim Your Free Strategy Call
-        </a>
-        <a href="#services" class="btn btn-outline">See What We Build →</a>
-      </div>
-      <div class="hero-trust">
-        <div class="hero-avatars">
-          <div class="avatar">A</div>
-          <div class="avatar">M</div>
-          <div class="avatar">J</div>
-          <div class="avatar">R</div>
+    <div class="hero-layout">
+      <!-- Left: Text content -->
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <div class="hero-eyebrow-line"></div>
+          <span>Digital Marketing &amp; Brand Studio</span>
         </div>
-        <div class="hero-trust-text">
-          <strong>130+ creators</strong> grew their owned audience<br/>with a Velvety resource page this year
+        <h1 class="serif">Your brand.<br/>Your audience.<br/><em>Your income.</em></h1>
+        <p class="hero-sub">
+          Velvety Brand Studio helps independent creators build a professional online presence, grow an owned email audience, and convert subscribers into loyal paying fans — all on your terms.
+        </p>
+        <div class="hero-actions">
+          <a href="#newsletter" class="btn btn-gold">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Claim Your Free Strategy Call
+          </a>
+          <a href="#services" class="btn btn-outline">See What We Build →</a>
+        </div>
+        <div class="hero-trust">
+          <div class="hero-avatars">
+            <!-- Tweakable avatars: change src to any image URL, or keep initials fallback -->
+            <div class="avatar avatar-img" data-initials="A" style="background:var(--rose);">
+              <img src="" alt="Creator A" onerror="this.style.display='none';this.parentElement.classList.add('show-initial');" />
+            </div>
+            <div class="avatar avatar-img" data-initials="M" style="background:var(--rose-dark);">
+              <img src="" alt="Creator M" onerror="this.style.display='none';this.parentElement.classList.add('show-initial');" />
+            </div>
+            <div class="avatar avatar-img" data-initials="J" style="background:#A07060;">
+              <img src="" alt="Creator J" onerror="this.style.display='none';this.parentElement.classList.add('show-initial');" />
+            </div>
+            <div class="avatar avatar-img" data-initials="R" style="background:var(--gold);color:var(--charcoal);">
+              <img src="" alt="Creator R" onerror="this.style.display='none';this.parentElement.classList.add('show-initial');" />
+            </div>
+          </div>
+          <div class="hero-trust-text">
+            <strong>130+ creators</strong> grew their owned audience<br/>with a Velvety resource page this year
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Tweakable GIF / Banner area -->
+      <div class="hero-gif-panel">
+        <!--
+          ══════════════════════════════════════════════════
+          TWEAKABLE GIF ZONE
+          Replace the src below with any GIF or image URL.
+          Recommended: animated banner, glitch effect, or
+          an anime-style looping GIF (400×500px ideal).
+          ══════════════════════════════════════════════════
+        -->
+        <div class="gif-frame">
+          <div class="gif-placeholder" id="gifContainer">
+            <!-- Default placeholder — swap img src with your GIF URL -->
+            <img
+              class="hero-gif"
+              src="assets/images/banner.gif"
+              alt="Velvety Brand Studio"
+              id="heroGif"
+              onerror="document.getElementById('gifFallback').style.display='flex';this.style.display='none';"
+            />
+            <!-- Fallback shown when no GIF is loaded -->
+            <div class="gif-fallback" id="gifFallback">
+              <div class="gif-fallback-inner">
+                <div class="gif-fallback-ring"></div>
+                <div class="gif-fallback-ring gif-ring-2"></div>
+                <div class="gif-fallback-text">
+                  <span class="serif" style="color:var(--gold);font-size:1.1rem;font-style:italic;">Place your GIF here</span>
+                  <span style="font-size:0.72rem;color:rgba(249,248,246,0.4);margin-top:6px;">400 × 500px recommended</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="gif-frame-accent"></div>
         </div>
       </div>
     </div>
@@ -120,6 +177,7 @@
             <li><span class="check">✓</span> Newsletter funnel that converts on autopilot</li>
             <li><span class="check">✓</span> Fully managed — we handle the tech</li>
           </ul>
+          <!-- FOSTA/SESTA badge — repositioned inside card flow for visibility -->
           <div class="about-badge">FOSTA/SESTA Compliant</div>
         </div>
       </div>
@@ -278,7 +336,6 @@
           </div>
         </div>
       </div>
-      <!-- Mockup -->
       <div class="resource-mockup">
         <div class="mockup-bar">
           <div class="mockup-dot" style="background:#FF5F57;"></div>
@@ -375,33 +432,71 @@
       <p>Real results from real creators who invested in owning their audience.</p>
     </div>
     <div class="testimonials-grid">
-      <div class="testimonial-card">
+      <!--
+        ══════════════════════════════════════════════════════
+        TWEAKABLE TESTIMONIALS
+        For each card:
+          - data-name: creator display name
+          - data-handle: platform/role label
+          - data-avatar: URL to avatar image (optional — falls back to initial)
+          - data-initial: single letter shown if no avatar image
+          - data-color: avatar background colour
+          - Edit the <p> text for the quote
+        ══════════════════════════════════════════════════════
+      -->
+      <div class="testimonial-card"
+           data-name="Amara V."
+           data-handle="OnlyFans &amp; Fansly Creator"
+           data-avatar=""
+           data-initial="A"
+           data-color="var(--rose)">
         <div class="stars">★★★★★</div>
         <p>"I used to lose followers every time a platform had issues. Now I have over 3,400 email subscribers I own. My income is finally stable."</p>
         <div class="testimonial-author">
-          <div class="author-avatar" style="background:var(--rose);">A</div>
+          <div class="author-avatar-wrap">
+            <img class="author-avatar-img" src="" alt="Amara V." onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="author-avatar author-initial" style="background:var(--rose);display:none;">A</div>
+          </div>
           <div>
             <div class="author-name">Amara V.</div>
             <div class="author-handle">OnlyFans &amp; Fansly Creator</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
+
+      <div class="testimonial-card"
+           data-name="Jade M."
+           data-handle="Independent Content Creator"
+           data-avatar=""
+           data-initial="J"
+           data-color="#A07060">
         <div class="stars">★★★★★</div>
         <p>"The resource page they built for me is honestly the most professional thing in my business. Prospective fans immediately take me more seriously."</p>
         <div class="testimonial-author">
-          <div class="author-avatar" style="background:#A07060;">J</div>
+          <div class="author-avatar-wrap">
+            <img class="author-avatar-img" src="" alt="Jade M." onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="author-avatar author-initial" style="background:#A07060;display:none;">J</div>
+          </div>
           <div>
             <div class="author-name">Jade M.</div>
             <div class="author-handle">Independent Content Creator</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card">
+
+      <div class="testimonial-card"
+           data-name="Rosalyn T."
+           data-handle="AllAccessFans &amp; Throne Creator"
+           data-avatar=""
+           data-initial="R"
+           data-color="var(--rose-dark)">
         <div class="stars">★★★★★</div>
-        <p>"I was sceptical about SEO mattering for creators like me. In 60 days my page was ranking and I had 200+ new subscribers from organic search alone."</p>
+        <p>"I was skeptical about SEO mattering for creators like me. In 60 days my page was ranking and I had 200+ new subscribers from organic search alone."</p>
         <div class="testimonial-author">
-          <div class="author-avatar" style="background:var(--rose-dark);">R</div>
+          <div class="author-avatar-wrap">
+            <img class="author-avatar-img" src="" alt="Rosalyn T." onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+            <div class="author-avatar author-initial" style="background:var(--rose-dark);display:none;">R</div>
+          </div>
           <div>
             <div class="author-name">Rosalyn T.</div>
             <div class="author-handle">AllAccessFans &amp; Throne Creator</div>
@@ -466,14 +561,39 @@
         </div>
         <p class="email-form-note">No spam. No sharing. Unsubscribe anytime. View our <a href="#">Privacy Policy</a>.</p>
       </div>
-      <div style="margin-top:32px;padding:24px;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:var(--radius);">
-        <p style="color:rgba(249,248,246,0.5);font-size:0.8rem;margin-bottom:16px;text-align:center;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;">Quick Links to Our Platforms</p>
-        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px;">
-          <a href="https://onlyfans.com" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:10px 20px;">OnlyFans ↗</a>
-          <a href="https://fansly.com" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:10px 20px;">Fansly ↗</a>
-          <a href="https://allaccessfans.com" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:10px 20px;">AllAccessFans ↗</a>
-          <a href="https://throne.com" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:10px 20px;">Throne ↗</a>
-        </div>
+      <div class="quick-links-box">
+  <p class="quick-links-label">Quick Links to Our Platforms</p>
+  <div class="quick-links-row">
+    <a href="https://onlyfans.com" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:10px 20px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="12" cy="12" r="10" fill="#00AFF0"/>
+        <text x="6" y="16" font-size="10" fill="white" font-weight="bold" font-family="Arial, sans-serif">OF</text>
+      </svg>
+      OnlyFans ↗
+    </a>
+    <a href="https://fansly.com" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:10px 20px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="6" fill="#1D9BF0"/>
+        <text x="5" y="16" font-size="9" fill="white" font-weight="bold" font-family="Arial, sans-serif">Fy</text>
+      </svg>
+      Fansly ↗
+    </a>
+    <a href="https://allaccessfans.com" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:10px 20px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="6" fill="#9B59B6"/>
+        <text x="4" y="16" font-size="9" fill="white" font-weight="bold" font-family="Arial, sans-serif">AA</text>
+      </svg>
+      AllAccessFans ↗
+    </a>
+    <a href="https://throne.com" target="_blank" rel="noopener" class="btn btn-outline" style="font-size:0.78rem;padding:10px 20px;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="24" height="24" rx="6" fill="#1E1E1E" stroke="#D4AF37" stroke-width="1.5"/>
+        <text x="5" y="16" font-size="10" fill="#D4AF37" font-weight="bold" font-family="Arial, sans-serif">Th</text>
+      </svg>
+      Throne ↗
+    </a>
+  </div>
+</div>
       </div>
       <div class="perks">
         <div class="perk"><div class="perk-dot"></div>Weekly tips</div>
@@ -540,6 +660,7 @@
     📬 Get Your Free Strategy Call
   </a>
 </div>
-</body>
+
 <script src="assets/js/app.js"></script>
+</body>
 </html>
