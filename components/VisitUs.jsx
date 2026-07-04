@@ -4,7 +4,7 @@ export default function VisitUs() {
   return (
     <section className="visit-us">
       <div className="visit-left">
-        <h2 className="serif">Visit Us</h2>
+        
 
         {/* Address */}
         <div className="visit-block">
