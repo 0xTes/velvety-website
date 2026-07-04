@@ -281,11 +281,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-// Re-use icons defined above — declared here to avoid a second import
-const PLATFORM_ICONS = {
-  OnlyFans:      <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#00AFF0"/><text x="5" y="16" fontSize="10" fill="white" fontWeight="bold">OF</text></svg>,
-  Fansly:        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#1D9BF0"/><text x="5" y="16" fontSize="9" fill="white" fontWeight="bold">Fy</text></svg>,
-  AllAccessFans: <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#9B59B6"/><text x="4" y="16" fontSize="9" fill="white" fontWeight="bold">AA</text></svg>,
-  Throne:        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#1E1E1E" stroke="#D4AF37" strokeWidth="1.5"/><text x="5" y="16" fontSize="10" fill="#D4AF37" fontWeight="bold">Th</text></svg>,
-};

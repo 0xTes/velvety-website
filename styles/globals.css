@@ -72,6 +72,14 @@ body {
 .gold  { color: var(--gold); }
 .rose  { color: var(--rose); }
 
+.container,
+.hero-layout,
+.hero-content,
+.hero-gif-panel {
+  position: relative;
+  z-index: 1;
+}
+
 .tag {
   display: inline-block;
   font-size: 0.7rem;
@@ -307,8 +315,11 @@ nav.velvety-nav.scrolled {
     radial-gradient(ellipse 80% 70% at 60% 50%, rgba(199,154,154,0.22) 0%, transparent 65%),
     radial-gradient(ellipse 50% 50% at 15% 85%, rgba(212,175,55,0.14) 0%, transparent 60%),
     radial-gradient(ellipse 60% 60% at 90% 10%, rgba(199,154,154,0.12) 0%, transparent 60%);
-}
-[data-theme="light"] #hero { background: #2a1f2e; }
+
+  /* NEW */
+  pointer-events: none;
+  z-index: 0;
+}[data-theme="light"] #hero { background: #2a1f2e; }
 
 .hero-layout {
   display: grid;
