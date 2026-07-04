@@ -110,6 +110,15 @@ document.querySelectorAll('.service-card, .step, .testimonial-card, .faq-item, .
   }
 })();
 
+const strategyNumber = "2348012345678";
+const strategyMessage = encodeURIComponent(
+  "Hello Velvety, I want my free strategy call"
+);
+
+document.querySelectorAll(".strategy-call-btn").forEach(btn => {
+  btn.href = `https://wa.me/${strategyNumber}?text=${strategyMessage}`;
+});
+
 /*
   ════════════════════════════════════════════════════════════════
   HOW TO SWAP THE HERO GIF
