@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef } from "react";
-import { useRouter } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import Hero from "../components/Hero";
-import VisitUs from "../components/VisitUs";
+import LetsWorkTogether from "../components/LetsWorkTogether";
 import {
   PLATFORMS,
   SERVICES,
@@ -48,13 +48,6 @@ function handleSubscribe(e) {
 }
 
 // ── Platform SVG icons ─────────────────────────────────────────────────────
-const PLATFORM_ICONS = {
-  OnlyFans:      <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="#00AFF0"/><text x="5" y="16" fontSize="10" fill="white" fontWeight="bold">OF</text></svg>,
-  Fansly:        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#1D9BF0"/><text x="5" y="16" fontSize="9" fill="white" fontWeight="bold">Fy</text></svg>,
-  AllAccessFans: <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#9B59B6"/><text x="4" y="16" fontSize="9" fill="white" fontWeight="bold">AA</text></svg>,
-  Throne:        <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#1E1E1E"/><text x="4" y="16" fontSize="9" fill="#D4AF37" fontWeight="bold">Th</text></svg>,
-};
-
 // ─────────────────────────────────────────────────────────────────────────
 export default function HomePage() {
   const pageRef = useAnimateIn();
@@ -71,7 +64,7 @@ export default function HomePage() {
             <span className="platform-label">We support creators on</span>
             {PLATFORMS.map((p) => (
               <a key={p.label} href={p.href} target="_blank" rel="noopener noreferrer" className="platform-pill">
-                {PLATFORM_ICONS[p.label]}
+                <Image src={p.icon} alt="" aria-hidden="true" width={14} height={14} />
                 {p.label}
               </a>
             ))}
@@ -267,7 +260,7 @@ export default function HomePage() {
               <div className="quick-links-row">
                 {PLATFORMS.map((p) => (
                   <a key={p.label} href={p.href} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: "0.78rem", padding: "10px 20px" }}>
-                    {PLATFORM_ICONS[p.label]} {p.label} ↗
+                    <Image src={p.icon} alt="" aria-hidden="true" width={14} height={14} /> {p.label} ↗
                   </a>
                 ))}
               </div>
@@ -276,8 +269,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── VISIT US ── */}
-      <VisitUs />
+      {/* ── LETS WORK TOGETHER ── */}
+      <LetsWorkTogether />
     </div>
   );
 }

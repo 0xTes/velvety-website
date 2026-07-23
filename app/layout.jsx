@@ -19,13 +19,6 @@ export default function RootLayout({ children }) {
         suppressHydrationWarning on <html> prevents React from complaining
         about data-theme being updated client-side by useTheme.
       */}
-      <head>
-        {/* Font Awesome for social icons in VisitUs */}
-        <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-        />
-      </head>
       <body>
         <Navbar />
         <main>{children}</main>
