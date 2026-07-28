@@ -6,7 +6,7 @@ export const metadata = buildMetadata({
   title: "Creator Growth for All Platforms — Patreon, AllAccessFans & More",
   description:
     "Velvety helps content creators on Patreon, AllAccessFans, Throne, and any subscription platform grow with SEO, email marketing, and brand strategy.",
-  path: "/other-platforms-growth",
+  path: "/other-platforms-marketing",
 });
 
 const PLATFORMS_SUPPORTED = [

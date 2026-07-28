@@ -9,7 +9,7 @@ import { GROWTH_BUTTONS } from "../lib/constants";
 export default function GrowthButtons() {
   return (
     <div>
-      <h3 className="growth-heading">Choose Your Growth Path</h3>
+      <p className="growth-heading">Choose Your Growth Path</p>
       <div className="growth-path-buttons">
         {GROWTH_BUTTONS.map((btn) => (
           <Link key={btn.label} href={btn.href} className="growth-btn">

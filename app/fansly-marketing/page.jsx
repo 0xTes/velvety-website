@@ -6,7 +6,7 @@ export const metadata = buildMetadata({
   title: "Fansly Marketing & Growth Agency",
   description:
     "Grow your Fansly with SEO, email marketing, and creator branding strategies built for independent content creators by Velvety Brand Studio.",
-  path: "/fansly-growth",
+  path: "/fansly-marketing",
 });
 
 const FEATURES = [

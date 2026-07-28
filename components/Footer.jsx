@@ -71,9 +71,6 @@ function FooterLinks({ footerRef }) {
                   <Link href={link.href}>{link.label}</Link>
                 </li>
               ))}
-              <li>
-                <Link href="/privacy-policy">Privacy Policy</Link>
-              </li>
             </ul>
           </div>
         </div>
@@ -149,7 +146,7 @@ export default function Footer() {
         setFooterVisible(entry.isIntersecting);
       },
       {
-        threshold: 0.15,
+        threshold: 0,
       }
     );
 

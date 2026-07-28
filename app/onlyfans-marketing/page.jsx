@@ -6,7 +6,7 @@ export const metadata = buildMetadata({
   title: "OnlyFans Marketing & Growth Agency",
   description:
     "Grow your OnlyFans with Velvety's proven SEO, email marketing, and brand strategy built exclusively for independent content creators.",
-  path: "/onlyfans-growth",
+  path: "/onlyfans-marketing",
 });
 
 const FEATURES = [

@@ -1,15 +1,19 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import { useTheme } from "../hooks/useTheme";
 import { useScrollPosition } from "../hooks/useScrollPosition";
-import { NAV_LINKS, WHATSAPP_URL } from "../lib/constants";
+import { NAV_LINKS } from "../lib/constants";
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const scrollY = useScrollPosition();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
+
+  useEffect(() => () => { document.body.style.overflow = ""; }, []);
 
   const closeMobile = () => {
     setMobileOpen(false);
@@ -23,63 +27,68 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className={`velvety-nav${scrollY > 40 ? " scrolled" : ""}`}>
+      <nav className={`velvety-nav${scrollY > 40 ? " scrolled" : ""}`} aria-label="Primary navigation">
         <div className="nav-inner">
-          {/* Brand */}
           <div className="nav-brand">
-            <Link href="/" className="nav-logo">
+            <Link href="/" className="nav-logo" aria-label="Velvety home">
               Velvety<span>.</span>
             </Link>
             <div className="nav-tagline">Digital Marketing &amp; Brand Studio</div>
           </div>
 
-          {/* Desktop links */}
           <ul className="nav-links">
             {NAV_LINKS.map((link) => (
               <li key={link.label}>
-                <Link href={link.href}>{link.label}</Link>
+                <Link href={link.href} aria-current={link.href === pathname ? "page" : undefined}>
+                  {link.label}
+                </Link>
               </li>
             ))}
           </ul>
 
-          {/* Right controls */}
           <div className="nav-right">
             <button
               className="theme-toggle"
               onClick={toggleTheme}
-              aria-label="Toggle dark/light mode"
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              aria-pressed={theme === "light"}
             >
-              <span className="theme-icon theme-icon-dark">🌙</span>
-              <span className="theme-icon theme-icon-light">☀️</span>
+              <span className={`theme-icon theme-icon-dark${theme === "dark" ? " is-visible" : ""}`} aria-hidden="true">🌙</span>
+              <span className={`theme-icon theme-icon-light${theme === "light" ? " is-visible" : ""}`} aria-hidden="true">☀️</span>
             </button>
             <Link href="/#newsletter" className="btn btn-gold nav-cta">
               Get Started
             </Link>
           </div>
 
-          {/* Hamburger */}
           <button
             className="hamburger"
             onClick={openMobile}
             aria-label="Open menu"
+            aria-expanded={mobileOpen}
+            aria-controls="mobile-navigation"
           >
             <span /><span /><span />
           </button>
         </div>
       </nav>
 
-      {/* Mobile overlay */}
       {mobileOpen && (
-        <div className="mobile-nav open" role="dialog" aria-modal="true">
+        <div id="mobile-navigation" className="mobile-nav open" role="dialog" aria-modal="true" aria-label="Mobile navigation">
           <button
             className="mobile-nav-close"
             onClick={closeMobile}
             aria-label="Close menu"
           >
-            ✕
+            ×
           </button>
           {NAV_LINKS.map((link) => (
-            <Link key={link.label} href={link.href} onClick={closeMobile}>
+            <Link
+              key={link.label}
+              href={link.href}
+              onClick={closeMobile}
+              aria-current={link.href === pathname ? "page" : undefined}
+            >
               {link.label}
             </Link>
           ))}

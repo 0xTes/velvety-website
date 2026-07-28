@@ -245,7 +245,7 @@ export default function HomePage() {
                 </div>
               </form>
               <p className="email-form-note">
-                No spam. No sharing. Unsubscribe anytime. View our <Link href="/privacy-policy">Privacy Policy</Link>.
+                No spam. No sharing. Unsubscribe anytime. View our <Link href="/legal#privacy">Privacy Policy</Link>.
               </p>
             </div>
 
