@@ -104,7 +104,7 @@ export default function HomePage() {
             <div className="about-text animate-in">
               <div className="tag">Who We Are</div>
               <h2 className="serif">
-                The only agency built around <em style={{ fontStyle: "italic", color: "var(--rose)" }}>your</em> kind of business
+                The only agency built around <em style={{ fontStyle: "italic", color: "var(--rose)" }}>your</em> business.
               </h2>
               <h3>Grow Your OnlyFans Audience with SEO &amp; Email Marketing</h3>
               <div className="divider" />
