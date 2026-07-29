@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { useTheme } from "../hooks/useTheme";
@@ -30,10 +31,16 @@ export default function Navbar() {
       <nav className={`velvety-nav${scrollY > 40 ? " scrolled" : ""}`} aria-label="Primary navigation">
         <div className="nav-inner">
           <div className="nav-brand">
-            <Link href="/" className="nav-logo" aria-label="Velvety home">
-              Velvety<span>.</span>
+            <Link href="/" className="brand-logo nav-brand-logo" aria-label="Velvety home">
+              <Image
+                src={theme === "dark" ? "/logo-light.png" : "/logo-dark.png"}
+                alt="Velvety Digital Marketing & Brand Studio"
+                className="brand-logo-image"
+                width={1024}
+                height={1024}
+                priority
+              />
             </Link>
-            <div className="nav-tagline">Digital Marketing &amp; Brand Studio</div>
           </div>
 
           <ul className="nav-links">

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { buildMetadata } from "../../lib/seo";
-import { WHATSAPP_URL } from "../../lib/constants";
+import { STRATEGY_CALL_URL } from "../../lib/constants";
 
 export const metadata = buildMetadata({
   title: "OnlyFans Marketing & Growth Agency",
@@ -35,8 +35,8 @@ export default function OnlyFansGrowthPage() {
             rank on Google, and own an email audience that keeps paying — even if OnlyFans changes overnight.
           </p>
           <div className="hero-actions">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
-              📬 Book a Free Strategy Call
+            <a href={STRATEGY_CALL_URL} className="btn btn-gold">
+              📬 Request a Free Strategy Call
             </a>
             <Link href="/#services" className="btn btn-outline">See All Services →</Link>
           </div>
@@ -71,8 +71,8 @@ export default function OnlyFansGrowthPage() {
           <p style={{ color: "var(--text-secondary)", marginBottom: 32, maxWidth: 480, margin: "0 auto 32px" }}>
             Book a free 30-minute strategy call. No commitment. Just a clear plan for your growth.
           </p>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
-            📬 Claim Your Free Strategy Call
+          <a href={STRATEGY_CALL_URL} className="btn btn-gold">
+            📬 Request a Free Strategy Call
           </a>
         </div>
       </section>

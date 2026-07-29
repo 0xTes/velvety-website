@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { buildMetadata } from "../../lib/seo";
-import { WHATSAPP_URL } from "../../lib/constants";
+import { STRATEGY_CALL_URL } from "../../lib/constants";
 
 export const metadata = buildMetadata({
   title: "Creator Branding — Visual Identity for Content Creators",
@@ -36,8 +36,8 @@ export default function CreatorBrandingPage() {
             trust you, and pay premium.
           </p>
           <div className="hero-actions">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
-              💎 Book a Free Brand Strategy Call
+            <a href={STRATEGY_CALL_URL} className="btn btn-gold">
+              💎 Request a Free Strategy Call
             </a>
             <Link href="/#services" className="btn btn-outline">See All Services →</Link>
           </div>
@@ -89,8 +89,8 @@ export default function CreatorBrandingPage() {
           <p style={{ color: "var(--text-secondary)", maxWidth: 480, margin: "0 auto 32px" }}>
             One free strategy call — we'll map out your brand direction and show you exactly what we'd build.
           </p>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
-            💎 Claim Your Free Brand Call
+          <a href={STRATEGY_CALL_URL} className="btn btn-gold">
+            💎 Request a Free Strategy Call
           </a>
         </div>
       </section>

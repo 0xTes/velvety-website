@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { buildMetadata } from "../../lib/seo";
-import { WHATSAPP_URL } from "../../lib/constants";
+import { STRATEGY_CALL_URL } from "../../lib/constants";
 
 export const metadata = buildMetadata({
   title: "Fansly Marketing & Growth Agency",
@@ -35,8 +35,8 @@ export default function FanslyGrowthPage() {
             build an owned audience, and turn casual visitors into consistent paying subscribers.
           </p>
           <div className="hero-actions">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
-              🚀 Book a Free Strategy Call
+            <a href={STRATEGY_CALL_URL} className="btn btn-gold">
+              🚀 Request a Free Strategy Call
             </a>
             <Link href="/#services" className="btn btn-outline">See All Services →</Link>
           </div>
@@ -71,8 +71,8 @@ export default function FanslyGrowthPage() {
           <p style={{ color: "var(--text-secondary)", marginBottom: 32, maxWidth: 480, margin: "0 auto 32px" }}>
             One free call. A complete growth plan. No pressure.
           </p>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
-            🚀 Claim Your Free Strategy Call
+          <a href={STRATEGY_CALL_URL} className="btn btn-gold">
+            🚀 Request a Free Strategy Call
           </a>
         </div>
       </section>

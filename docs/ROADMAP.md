@@ -95,7 +95,7 @@ Strengthen the existing foundation without altering the visual identity.
 ### Constants
 
 - [x] Centralize business constants
-- [x] Centralize WhatsApp configuration
+- [x] Centralize contact configuration
 
 ### Footer
 

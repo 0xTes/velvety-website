@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { buildMetadata } from "../../lib/seo";
-import { WHATSAPP_URL } from "../../lib/constants";
+import { STRATEGY_CALL_URL } from "../../lib/constants";
 
 export const metadata = buildMetadata({
   title: "Creator Growth for All Platforms — Patreon, AllAccessFans & More",
@@ -43,8 +43,8 @@ export default function OtherPlatformsPage() {
             Velvety builds the brand and digital infrastructure to help you grow everywhere.
           </p>
           <div className="hero-actions">
-            <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
-              ⭐ Book a Free Strategy Call
+            <a href={STRATEGY_CALL_URL} className="btn btn-gold">
+              ⭐ Request a Free Strategy Call
             </a>
             <Link href="/#services" className="btn btn-outline">See All Services →</Link>
           </div>
@@ -98,8 +98,8 @@ export default function OtherPlatformsPage() {
           <p style={{ color: "var(--text-secondary)", maxWidth: 480, margin: "0 auto 32px" }}>
             Book a free call and tell us where you create. We'll build the strategy from there.
           </p>
-          <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="btn btn-gold">
-            ⭐ Claim Your Free Strategy Call
+          <a href={STRATEGY_CALL_URL} className="btn btn-gold">
+            ⭐ Request a Free Strategy Call
           </a>
         </div>
       </section>

@@ -11,7 +11,7 @@ export default function LetsWorkTogether() {
           </h2>
           <p>
             Velvety works remotely with independent creators through strategy
-            calls, Zoom, email, and WhatsApp. Start with the channel that feels
+            calls, Zoom, email, and phone. Start with the channel that feels
             easiest, and we will shape a clear growth plan together.
           </p>
         </div>

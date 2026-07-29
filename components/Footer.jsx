@@ -5,27 +5,33 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   FOOTER_COMPANY_LINKS,
-  WHATSAPP_URL,
+  STRATEGY_CALL_URL,
   SERVICES,
   PLATFORMS,
-  SOCIAL_LINKS,
 } from "../lib/constants";
 import { useScrollPosition } from "../hooks/useScrollPosition";
+import { useTheme } from "../hooks/useTheme";
 
-function FooterLinks({ footerRef }) {
+function FooterLinks({ footerRef, theme }) {
   return (
     <footer ref={footerRef}>
       <div className="container">
         <div className="footer-grid">
           {/* Brand */}
           <div className="footer-brand">
-            <Link href="/" className="nav-logo" style={{ fontSize: "1.5rem" }}>
-              Velvety<span>.</span>
+            <Link href="/" className="brand-logo footer-brand-logo" aria-label="Velvety home">
+              <Image
+                src={theme === "dark" ? "/logo-light.png" : "/logo-dark.png"}
+                alt="Velvety Digital Marketing & Brand Studio"
+                className="brand-logo-image"
+                width={1024}
+                height={1024}
+              />
             </Link>
 
             <p>
-              Digital marketing, branding, SEO, and email growth for independent
-              content creators. Built with discretion. Delivered with excellence.
+              Digital marketing, brand strategy, SEO, and email growth for independent
+              creators. Built with discretion and delivered with care.
             </p>
           </div>
 
@@ -82,31 +88,6 @@ function FooterLinks({ footerRef }) {
             FOSTA/SESTA and EU DSA.
           </p>
 
-          <div className="footer-social">
-            {SOCIAL_LINKS.map((social) => (
-              <a
-                key={social.id}
-                href={social.href}
-                target={social.id === "email" ? undefined : "_blank"}
-                rel={
-                  social.id === "email"
-                    ? undefined
-                    : "noopener noreferrer"
-                }
-                className="social-link"
-                aria-label={social.ariaLabel}
-              >
-                <Image
-                  src={social.icon}
-                  alt=""
-                  aria-hidden="true"
-                  className="social-link-icon"
-                  width={16}
-                  height={16}
-                />
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </footer>
@@ -119,15 +100,13 @@ function FloatingCta({ scrollY, footerVisible }) {
   return (
     <div className={`floating-cta${scrollY > 400 ? " visible" : ""}`}>
       <a
-        href={WHATSAPP_URL}
-        target="_blank"
-        rel="noopener noreferrer"
+        href={STRATEGY_CALL_URL}
         className="btn btn-gold"
         style={{
           boxShadow: "0 8px 32px rgba(212,175,55,0.35)",
         }}
       >
-        📬 Get Your Free Strategy Call
+        📬 Request a Free Strategy Call
       </a>
     </div>
   );
@@ -135,6 +114,7 @@ function FloatingCta({ scrollY, footerVisible }) {
 
 export default function Footer() {
   const scrollY = useScrollPosition();
+  const { theme } = useTheme();
 
   const footerRef = useRef(null);
 
@@ -159,7 +139,7 @@ export default function Footer() {
 
   return (
     <>
-      <FooterLinks footerRef={footerRef} />
+      <FooterLinks footerRef={footerRef} theme={theme} />
       <FloatingCta
         scrollY={scrollY}
         footerVisible={footerVisible}

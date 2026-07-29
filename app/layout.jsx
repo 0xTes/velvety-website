@@ -28,7 +28,7 @@ export const metadata = {
       { url: "/favicon.ico", sizes: "any" },
       { url: "/icon.png", type: "image/png", sizes: "512x512" },
     ],
-    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" }],
+    apple: [{ url: "/apple-touch-icon.png", type: "image/png", sizes: "512x512" }],
   },
   manifest: "/site.webmanifest",
   openGraph: {
@@ -39,7 +39,7 @@ export const metadata = {
     description: SITE_DESCRIPTION,
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.jpg",
         width: 1200,
         height: 630,
         alt: `${SITE_NAME} — ${SITE_TAGLINE}`,
@@ -50,7 +50,7 @@ export const metadata = {
     card: "summary_large_image",
     title: `${SITE_NAME} | ${SITE_TAGLINE}`,
     description: SITE_DESCRIPTION,
-    images: ["/og-image.png"],
+    images: ["/og-image.jpg"],
   },
 };
 

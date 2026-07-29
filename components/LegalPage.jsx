@@ -63,8 +63,8 @@ export default function LegalPage() {
             <p className="tag">Legal</p>
             <h1 id="legal-page-title" className="serif">Terms, privacy, and site information</h1>
             <p>
-              These are practical legal templates for {SITE_NAME}. They are not legal advice and must be
-              reviewed and tailored by qualified counsel before production publication.
+              These terms explain how {SITE_NAME} handles website use, privacy, cookies, and contact
+              requests. They do not replace the written agreement for a client engagement.
             </p>
             <p className="legal-updated">Last updated: July 28, 2026</p>
           </header>
@@ -94,20 +94,13 @@ export default function LegalPage() {
               agreement. Unless otherwise agreed in writing, pre-existing tools, methods, and templates
               remain the property of their original owner.
             </p>
-            <h3>Template review required</h3>
-            <p className="legal-placeholder">
-              Placeholder for business-specific payment, cancellation, limitation-of-liability,
-              governing-law, and dispute-resolution terms. Legal counsel should complete this section
-              before these terms are relied upon.
-            </p>
           </section>
 
           <section id="privacy" className="legal-section" aria-labelledby="privacy-title">
             <h2 id="privacy-title">Privacy Policy</h2>
             <p>
-              {SITE_NAME} should collect only the information needed to respond to enquiries, deliver
-              services, maintain client relationships, and improve the website. This policy must be
-              updated to reflect the tools and processors actually used at launch.
+              {SITE_NAME} collects only the information needed to respond to enquiries, deliver
+              services, maintain client relationships, and improve the website.
             </p>
             <h3>Information we may receive</h3>
             <p>
@@ -123,9 +116,9 @@ export default function LegalPage() {
             </p>
             <h3>Retention and rights</h3>
             <p>
-              Retention periods, applicable privacy rights, and any third-party processors must be set
-              out here after a business-specific data review. Users may contact us to request access,
-              correction, or deletion where applicable law provides that right.
+              We retain information only for as long as needed for the purpose for which it was collected
+              or to meet legal obligations. Users may contact us to request access, correction, or
+              deletion where applicable law provides that right.
             </p>
           </section>
 
@@ -133,21 +126,21 @@ export default function LegalPage() {
             <h2 id="cookies-title">Cookies</h2>
             <p>
               Cookies and similar technologies should be used only where they are necessary for the
-              website to operate or where a visitor has provided any required consent. This website’s
-              cookie practices must be confirmed before launch and kept aligned with the privacy policy.
+              website to operate or where a visitor has provided any required consent. This website uses
+              local storage only to remember a visitor's colour-theme preference.
             </p>
             <h3>Managing cookies</h3>
             <p>
               Visitors can generally control cookies through their browser settings. If analytics,
-              advertising, embedded media, or other optional technologies are added, this section must
-              identify them, explain their purpose, and provide the required consent choices.
+              advertising, embedded media, or other optional technologies are added, we will identify
+              them here, explain their purpose, and provide any required consent choices.
             </p>
           </section>
 
           <section id="contact" className="legal-section" aria-labelledby="contact-title">
             <h2 id="contact-title">Contact</h2>
             <p>
-              For questions about these legal templates or privacy requests, contact {SITE_NAME} using
+              For questions about these terms or privacy requests, contact {SITE_NAME} using
               the details below. We will respond through the appropriate channel.
             </p>
             <address className="legal-contact-details">

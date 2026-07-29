@@ -11,7 +11,6 @@ import {
   STEPS,
   TESTIMONIALS,
   FAQS,
-  WHATSAPP_URL,
 } from "../lib/constants";
 
 // ── Intersection Observer fade-in ──────────────────────────────────────────
@@ -250,7 +249,7 @@ export default function HomePage() {
             </div>
 
             <div className="perks">
-              {["Weekly tips","Early access","Exclusive discounts","Free strategy call"].map((p) => (
+              {["Weekly tips","Early access","Exclusive discounts","Free Strategy Call"].map((p) => (
                 <div key={p} className="perk"><div className="perk-dot" />{p}</div>
               ))}
             </div>
