@@ -1,0 +1,21 @@
+{
+  "name": "Velvety Brand Studio",
+  "short_name": "Velvety",
+  "description": "Digital marketing, branding, SEO, and email growth for independent content creators.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1E1E1E",
+  "theme_color": "#1E1E1E",
+  "icons": [
+    {
+      "src": "/android-chrome-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

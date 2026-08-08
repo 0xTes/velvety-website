@@ -1,0 +1,193 @@
+"use client";
+
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import Hero from "../components/Hero";
+import LetsWorkTogether from "../components/LetsWorkTogether";
+import Newsletter from "../components/Newsletter";
+import {
+  PLATFORMS,
+  SERVICES,
+  STEPS,
+  TESTIMONIALS,
+} from "../lib/constants";
+
+// ── Intersection Observer fade-in ──────────────────────────────────────────
+function useAnimateIn() {
+  const ref = useRef(null);
+  useEffect(() => {
+    const els = ref.current?.querySelectorAll(".animate-in");
+    if (!els) return;
+    const obs = new IntersectionObserver(
+      (entries) => entries.forEach((e) => { if (e.isIntersecting) e.target.classList.add("visible"); }),
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
+    );
+    els.forEach((el) => obs.observe(el));
+    return () => obs.disconnect();
+  }, []);
+  return ref;
+}
+
+export default function HomePage() {
+  const pageRef = useAnimateIn();
+
+  return (
+    <div ref={pageRef}>
+      {/* ── HERO ── */}
+      <Hero />
+
+      {/* ── PLATFORMS ── */}
+      <section id="platforms">
+        <div className="container">
+          <div className="platform-strip">
+            <span className="platform-label">We support creators on</span>
+            {PLATFORMS.map((p) => (
+              <a key={p.label} href={p.href} target="_blank" rel="noopener noreferrer" className="platform-pill">
+                <Image src={p.icon} alt="" aria-hidden="true" width={14} height={14} />
+                {p.label}
+              </a>
+            ))}
+            <span className="platform-label" style={{ color: "#C79A9A", marginLeft: 8 }}>
+              + your email list you <em>own</em>
+            </span>
+          </div>
+        </div>
+      </section>
+
+      {/* ── ABOUT ── */}
+      <section id="about">
+        <div className="container">
+          <div className="about-grid">
+            {/* Stat card */}
+            <div className="about-visual">
+              <div className="about-card animate-in">
+                <div className="about-card-stat">4.7×</div>
+                <div className="about-card-label">Average subscriber growth in 90 days</div>
+                <ul className="about-card-list">
+                  {[
+                    "Branded resource page — yours to own",
+                    "Email list that survives platform bans",
+                    "SEO strategy tailored for discoverability",
+                    "Clear links to OF, Fansly, Throne & more",
+                    "Newsletter funnel that converts on autopilot",
+                    "Fully managed — we handle the tech",
+                  ].map((item) => (
+                    <li key={item}><span className="check">✓</span> {item}</li>
+                  ))}
+                </ul>
+                <div className="about-badge">FOSTA/SESTA and EU DSA Compliant</div>
+              </div>
+            </div>
+
+            {/* Text */}
+            <div className="about-text animate-in">
+              <div className="tag">Who We Are</div>
+              <h2 className="serif">
+                The only agency built around <em style={{ fontStyle: "italic", color: "var(--rose)" }}>your</em> business.
+              </h2>
+              <h3>Grow Your OnlyFans Audience with SEO &amp; Email Marketing</h3>
+              <div className="divider" />
+              <p>Most digital marketing agencies don't understand your world — or they're too nervous to work in it. We're not them.</p>
+              <p>Velvety Brand Studio was founded specifically to help independent creators build professional, search-visible online presences that convert strangers into paying fans.</p>
+              <p>We speak the language of your industry: platform strategies, personal branding, discoverability, and audience ownership — all while staying fully within legal and platform guidelines.</p>
+
+              <div className="about-pillars">
+                {[
+                  { icon: "🎯", title: "Brand Strategy", desc: "Identity, positioning & voice designed for you" },
+                  { icon: "🔍", title: "SEO & Discovery", desc: "Be found by exactly the right people" },
+                  { icon: "📧", title: "Email Ownership", desc: "Your list. Your data. Platform-proof income" },
+                  { icon: "⚙️", title: "Done-For-You", desc: "We build & maintain so you focus on creating" },
+                ].map((p) => (
+                  <div key={p.title} className="pillar">
+                    <div className="pillar-icon">{p.icon}</div>
+                    <div className="pillar-title">{p.title}</div>
+                    <div className="pillar-desc">{p.desc}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── SERVICES ── */}
+      <section id="services">
+        <div className="container">
+          <div className="section-header">
+            <div className="tag">What We Offer</div>
+            <div className="divider" />
+            <h2 className="serif">Everything you need to grow — in one place</h2>
+            <p>From your first branded page to a fully-automated email funnel, we handle the digital heavy lifting so you can stay focused on creating.</p>
+          </div>
+          <div className="services-grid">
+            {SERVICES.map((s) => (
+              <div key={s.title} className={`service-card animate-in${s.featured ? " featured" : ""}`}>
+                <div className="service-icon">{s.icon}</div>
+                <h3 className="serif">{s.title}</h3>
+                <p>{s.description}</p>
+                <ul className="service-detail-list">
+                  {s.features.map((f) => <li key={f}>{f}</li>)}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── HOW IT WORKS ── */}
+      <section id="how">
+        <div className="container">
+          <div className="section-header">
+            <div className="tag">How It Works</div>
+            <div className="divider" />
+            <h2 className="serif">From first call to full growth — in 4 steps</h2>
+          </div>
+          <div className="steps-grid">
+            {STEPS.map((s) => (
+              <div key={s.number} className="step animate-in">
+                <div className="step-number">{s.number}</div>
+                <div className="step-icon">{s.icon}</div>
+                <h3>{s.title}</h3>
+                <p>{s.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── TESTIMONIALS ── */}
+      <section id="testimonials">
+        <div className="container">
+          <div className="section-header">
+            <div className="tag">Results</div>
+            <div className="divider" />
+            <h2 className="serif">Creators who grew with Velvety</h2>
+          </div>
+          <div className="testimonials-grid">
+            {TESTIMONIALS.map((t) => (
+              <div key={t.name} className="testimonial-card animate-in">
+                <div className="star-row">{"⭐".repeat(t.stars)}</div>
+                <p>"{t.quote}"</p>
+                <div className="author-row">
+                  <div className="author-avatar" style={{ background: t.color }}>
+                    {t.initial}
+                  </div>
+                  <div>
+                    <div className="author-name">{t.name}</div>
+                    <div className="author-handle">{t.handle}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Newsletter showPlatformLinks />
+
+      {/* ── LETS WORK TOGETHER ── */}
+      <LetsWorkTogether />
+    </div>
+  );
+}
