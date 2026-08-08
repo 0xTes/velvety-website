@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Newsletter from "../../components/Newsletter";
 import { buildMetadata } from "../../lib/seo";
 import { STRATEGY_CALL_URL } from "../../lib/constants";
 
@@ -103,6 +104,7 @@ export default function OtherPlatformsPage() {
           </a>
         </div>
       </section>
+      <Newsletter />
     </>
   );
 }

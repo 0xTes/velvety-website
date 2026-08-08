@@ -5,12 +5,12 @@ import Image from "next/image";
 import Link from "next/link";
 import Hero from "../components/Hero";
 import LetsWorkTogether from "../components/LetsWorkTogether";
+import Newsletter from "../components/Newsletter";
 import {
   PLATFORMS,
   SERVICES,
   STEPS,
   TESTIMONIALS,
-  FAQS,
 } from "../lib/constants";
 
 // ── Intersection Observer fade-in ──────────────────────────────────────────
@@ -29,25 +29,6 @@ function useAnimateIn() {
   return ref;
 }
 
-// ── Newsletter subscribe ───────────────────────────────────────────────────
-function handleSubscribe(e) {
-  e.preventDefault();
-  const input = document.getElementById("emailInput");
-  const email = input.value.trim();
-  if (!email || !email.includes("@")) {
-    input.style.borderColor = "#C79A9A";
-    input.placeholder = "Please enter a valid email";
-    setTimeout(() => { input.style.borderColor = ""; input.placeholder = "your@email.com"; }, 2000);
-    return;
-  }
-  input.value = "";
-  input.placeholder = "✓ You're in! Check your inbox.";
-  input.style.borderColor = "var(--gold)";
-  setTimeout(() => { input.placeholder = "your@email.com"; input.style.borderColor = ""; }, 4000);
-}
-
-// ── Platform SVG icons ─────────────────────────────────────────────────────
-// ─────────────────────────────────────────────────────────────────────────
 export default function HomePage() {
   const pageRef = useAnimateIn();
 
@@ -203,70 +184,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── FAQ ── */}
-      <section id="faq">
-        <div className="container">
-          <div className="section-header">
-            <div className="tag">FAQ</div>
-            <div className="divider" />
-            <h2 className="serif">Questions we get asked a lot</h2>
-          </div>
-          <div className="faq-grid">
-            {FAQS.map((f) => (
-              <div key={f.question} className="faq-item animate-in">
-                <h3>{f.question}</h3>
-                <p>{f.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── NEWSLETTER ── */}
-      <section id="newsletter">
-        <div className="container">
-          <div className="newsletter-inner">
-            <div className="tag">Join the Community</div>
-            <h2 className="serif">Be the face of our social media platforms</h2>
-            <p>Get more exposure and drive more visitors to your OnlyFans, Fansly, AllAccess and Throne accounts.</p>
-
-            <div className="email-form">
-              <form onSubmit={handleSubscribe} noValidate>
-                <div className="email-row">
-                  <input
-                    type="email"
-                    className="email-input"
-                    placeholder="your@email.com"
-                    id="emailInput"
-                    aria-label="Email address"
-                  />
-                  <button type="submit" className="btn btn-gold">Subscribe</button>
-                </div>
-              </form>
-              <p className="email-form-note">
-                No spam. No sharing. Unsubscribe anytime. View our <Link href="/legal#privacy">Privacy Policy</Link>.
-              </p>
-            </div>
-
-            <div className="perks">
-              {["Weekly tips","Early access","Exclusive discounts","Free Strategy Call"].map((p) => (
-                <div key={p} className="perk"><div className="perk-dot" />{p}</div>
-              ))}
-            </div>
-
-            <div className="quick-links-box">
-              <p className="quick-links-label">Quick Links to Our Platforms</p>
-              <div className="quick-links-row">
-                {PLATFORMS.map((p) => (
-                  <a key={p.label} href={p.href} target="_blank" rel="noopener noreferrer" className="btn btn-outline" style={{ fontSize: "0.78rem", padding: "10px 20px" }}>
-                    <Image src={p.icon} alt="" aria-hidden="true" width={14} height={14} /> {p.label} ↗
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Newsletter showPlatformLinks />
 
       {/* ── LETS WORK TOGETHER ── */}
       <LetsWorkTogether />

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Newsletter from "../../components/Newsletter";
 import { buildMetadata } from "../../lib/seo";
 import { STRATEGY_CALL_URL } from "../../lib/constants";
 
@@ -76,6 +77,7 @@ export default function FanslyGrowthPage() {
           </a>
         </div>
       </section>
+      <Newsletter />
     </>
   );
 }

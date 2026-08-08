@@ -8,9 +8,23 @@ import {
   STRATEGY_CALL_URL,
   SERVICES,
   PLATFORMS,
+  SOCIAL_LINKS,
 } from "../lib/constants";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import { useTheme } from "../hooks/useTheme";
+
+function FooterSocialIcon({ social }) {
+  return (
+    <img
+      className="footer-social-icon"
+      src={social.icon}
+      alt=""
+      aria-hidden="true"
+      width="18"
+      height="18"
+    />
+  );
+}
 
 function FooterLinks({ footerRef, theme }) {
   return (
@@ -33,6 +47,35 @@ function FooterLinks({ footerRef, theme }) {
               Digital marketing, brand strategy, SEO, and email growth for independent
               creators. Built with discretion and delivered with care.
             </p>
+
+            <nav className="footer-socials" aria-label="Velvety social channels">
+              <span className="footer-socials-label">Follow Velvety</span>
+              {SOCIAL_LINKS.map((social) => (
+                social.href ? (
+                  <a
+                    key={social.id}
+                    className="footer-social-link"
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={"Visit Velvety on " + social.label}
+                    title={social.label}
+                  >
+                    <FooterSocialIcon social={social} />
+                  </a>
+                ) : (
+                  <span
+                    key={social.id}
+                    className="footer-social-link is-coming-soon"
+                    role="img"
+                    aria-label={social.label + " — " + social.status}
+                    title={social.label + " — " + social.status}
+                  >
+                    <FooterSocialIcon social={social} />
+                  </span>
+                )
+              ))}
+            </nav>
           </div>
 
           {/* Services */}
