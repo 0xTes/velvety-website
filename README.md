@@ -24,6 +24,15 @@ Production share and browser artwork lives in `public/`:
 
 `public/site.webmanifest` references the Android icon files.
 
+## Blog publishing
+
+Velvety publishes new Blog listing cards from the official Substack RSS feed. The
+publication and feed URLs are centralized in `lib/constants.js`. The server-side
+RSS data layer refreshes hourly and renders the newest three valid articles in
+publication-date order. If the feed is unavailable or invalid, the existing
+local articles remain available as the predictable listing fallback and continue
+to power their local article pages and sitemap entries.
+
 ## Legal content
 
 `app/legal/page.jsx` provides the single legal destination with independently linkable

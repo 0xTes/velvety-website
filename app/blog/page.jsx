@@ -1,6 +1,9 @@
 import Link from "next/link";
-import { ARTICLES } from "../../lib/articles";
 import { buildMetadata } from "../../lib/seo";
+import { getBlogArticles } from "../../lib/substack";
+
+// Keep the listing eligible for ISR even when the RSS feed is unavailable at build time.
+export const revalidate = 3600;
 
 export const metadata = buildMetadata({
   title: "Blog",
@@ -10,14 +13,28 @@ export const metadata = buildMetadata({
 });
 
 function formatDate(date) {
+  const normalizedDate = /^\d{4}-\d{2}-\d{2}$/.test(date)
+    ? date + "T00:00:00"
+    : date;
+
   return new Intl.DateTimeFormat("en", {
     day: "numeric",
     month: "long",
     year: "numeric",
-  }).format(new Date(date + "T00:00:00"));
+  }).format(new Date(normalizedDate));
 }
 
-export default function BlogPage() {
+function ArticleLink({ article, children, className }) {
+  if (article.url) {
+    return <a className={className} href={article.url}>{children}</a>;
+  }
+
+  return <Link className={className} href={"/blog/" + article.slug}>{children}</Link>;
+}
+
+export default async function BlogPage() {
+  const articles = await getBlogArticles();
+
   return (
     <section className="blog-page" aria-labelledby="blog-title">
       <div className="container">
@@ -30,23 +47,27 @@ export default function BlogPage() {
           </p>
         </header>
 
-        {ARTICLES.length > 0 ? (
+        {articles.length > 0 ? (
           <div className="article-grid">
-            {ARTICLES.map((article) => (
-              <article key={article.slug} className="article-card">
+            {articles.map((article) => (
+              <article key={article.url || article.slug} className="article-card">
                 <p className="article-category">{article.category}</p>
                 <h2 className="serif">
-                  <Link href={"/blog/" + article.slug}>{article.title}</Link>
+                  <ArticleLink article={article}>{article.title}</ArticleLink>
                 </h2>
                 <p>{article.description}</p>
                 <div className="article-card-footer">
                   <time dateTime={article.publishedAt}>{formatDate(article.publishedAt)}</time>
-                  <span aria-hidden="true"> · </span>
-                  <span>{article.readingTime}</span>
+                  {article.readingTime && (
+                    <>
+                      <span aria-hidden="true"> · </span>
+                      <span>{article.readingTime}</span>
+                    </>
+                  )}
                 </div>
-                <Link className="article-card-link" href={"/blog/" + article.slug}>
+                <ArticleLink article={article} className="article-card-link">
                   Read article <span aria-hidden="true">→</span>
-                </Link>
+                </ArticleLink>
               </article>
             ))}
           </div>
